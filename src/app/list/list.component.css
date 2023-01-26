@@ -1,0 +1,263 @@
+body {
+	font-family:  Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+	background-color: #f4f4f4;	
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+/* header and nav */
+
+header {
+	background-color: #fff;
+	color: rgba(0,0,0,1.2);
+	padding-top: 15px;
+	min-height: 50px;
+	border-bottom: 2px solid transparent;
+}
+
+header a {
+	color: rgba(0,0,0,1.2);
+	text-decoration:  none;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-family: monospace;
+}
+
+header a:hover,
+header a:active {
+	font-weight: bold;
+	font-size: 15px;
+	
+}
+
+header ul {
+	margin: 0;
+	padding: 0;
+}
+
+header li {
+	float: left;
+	display: inline;
+	padding: 0 20px;
+}
+
+header .logo {
+	float: left;
+	padding: 5px;
+	font-family: monospace;
+
+}
+
+header .logo h1 {
+	margin: 0;
+}
+
+header nav {
+	float: right;
+	margin-top:  15px;
+}
+
+
+/* hero section */
+
+.hero {
+	min-height:  400px;
+	background: url("https://cdn.pixabay.com/photo/2020/05/04/11/04/pokeball-5128709_960_720.jpg") no-repeat;
+	background-size: cover;
+    background-position: center;
+	text-align: center;
+	color: #fff;
+	font-family: monospace, cursive, Arial;
+}
+
+.hero h2 {
+	margin-top: 100px;
+	font-size: 35px;
+	margin-bottom: 10px;
+}
+
+.hero p {
+	
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+/* Pokemons List Starts here */
+
+.pokemons-list {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 6px;
+    color: black;
+    text-shadow: 2px 2px 2px lightgray;
+    margin-top: 4rem;
+}
+
+.general-container {
+    display: flex;
+    justify-content: center;
+}
+
+.employer-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 50%;
+    margin-top: 2rem;
+}
+
+td, th {
+    padding: 20px;
+}
+
+thead {
+	background-image: url(https://i.pinimg.com/736x/82/88/01/8288019c8aaa4a22b721a0fd9b9c2f68.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td{
+    background-color: #4bc8ad;
+    color: white;
+}
+
+.edit-button ,
+.delete-button ,
+.details-button  { 
+	font-family: monospace;
+    font-weight: 400;
+    text-decoration: none;
+    max-width: max-content;
+    padding: 3px 14px 3px 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+	transition: box-shadow 0.1s;
+	box-shadow: -5px -5px 15px #fff, 5px 5px 15px #999;
+	text-decoration: none;
+	color: #444;
+}
+
+
+.edit-button,
+.delete-button,
+.details-button {
+    margin: 10px;
+}
+
+.edit-button:hover {
+	background-color: #fff;
+    transition: box-shadow 0.1s;
+  	box-shadow: -1px -1px 5px #fff, 1px 1px 5px #999;
+}
+
+.delete-button:hover {
+	background-color: #fff;
+    transition: box-shadow 0.1s;
+  	box-shadow: -1px -1px 5px #fff, 1px 1px 5px #999;
+}
+
+.details-button:hover {
+	background-color: #fff;
+    transition: box-shadow 0.1s;
+  	box-shadow: -1px -1px 5px #fff, 1px 1px 5px #999;
+}
+
+/* FOOTER */
+footer {
+	margin-top: 7rem;
+	padding: 20px;
+	color: #fff;
+	background-color: #343189;
+	text-align: center;
+	font-size: 15px;
+	font-family: monospace, cursive, Arial;
+}
+
+.newsletter  input[type="email"]{
+	padding: 5px;
+	height: 15px;
+	width: 200px;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+.newsletter button[type="submit"] {
+	height: 30px;
+	border-radius: 4px;
+	background-color: #ad133c;
+	color: #fff;
+}
+
+/* Media Queries */
+@media(max-width: 787px) {
+	header .logo,
+	header nav,
+	header li,
+	#parent .child,
+	main .main-section,
+	aside .side-section
+	  {
+		float: none;
+		text-align:  center;
+		width: 100%;
+	}
+	header {
+		padding-bottom: 20px;
+	}
+	.newsletter  button[type="submit"] {
+			width: 100%;
+			display: block;
+	}
+	.newsletter  input[type="email"] {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	main .main-section,
+	aside .side-section {
+		margin: 0 auto;
+	}
+	.hero_2 {
+	background-size: cover; 
+	
+}
+
+}
+
+@media(max-width: 589px) {
+	.hero  .dark-bg {
+		color: #efe8ef;
+		font-weight: bold;
+		background-color: rgba(0,0,0,0.7);
+
+
+	}
+}
+
+
+

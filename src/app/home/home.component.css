@@ -1,0 +1,183 @@
+body {
+	font-family:  Arial, sans-serif;
+	font-size: 10px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+	background-color: #f4f4f4;	
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+/* header and nav */
+
+header {
+	background-color: #fff;
+	color: rgba(0,0,0,1.2);
+	padding-top: 15px;
+	min-height: 50px;
+	border-bottom: 2px solid transparent;
+}
+
+
+header a {
+	color: rgba(0,0,0,1.2);
+	text-decoration:  none;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-family: monospace;
+}
+
+header a:hover,
+header a:active {
+	font-weight: bold;
+	font-size: 15px;
+	
+}
+
+
+
+header ul {
+	margin: 0;
+	padding: 0;
+}
+
+header li {
+	float: left;
+	display: inline;
+	padding: 0 20px;
+}
+
+header .logo {
+	float: left;
+	padding: 5px;
+	font-family: monospace;
+
+}
+
+header .logo h1 {
+	margin: 0;
+}
+
+header nav {
+	float: right;
+	margin-top:  15px;
+}
+
+/* hero section */
+
+.hero {
+	min-height:  400px;
+	background: url("https://cdn.pixabay.com/photo/2020/05/04/11/04/pokeball-5128709_960_720.jpg") no-repeat;
+	background-size: cover;
+    background-position: center;
+	text-align: center;
+	color: #fff;
+	font-family: monospace, cursive, Arial;
+}
+
+.hero h2 {
+	margin-top: 100px;
+	font-size: 35px;
+	margin-bottom: 10px;
+}
+
+.hero p {
+	
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#parent {
+	
+	font-family: monospace, cursive, Arial;
+	padding: 60px 0;
+}
+
+#parent .child  img {
+	width: 120px;
+}
+
+.child {
+	float: left;
+	width: 30%;
+	padding: 10px;
+	text-align: center;
+	font-size: 15px;
+}
+
+
+
+footer {
+	padding: 20px;
+	color: #fff;
+	background-color: #343189;
+	text-align: center;
+	font-size: 15px;
+	font-family: monospace, cursive, Arial;
+}
+
+.newsletter  input[type="email"]{
+	padding: 5px;
+	height: 15px;
+	width: 200px;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+.newsletter button[type="submit"] {
+	height: 30px;
+	border-radius: 4px;
+	background-color: #ad133c;
+	color: #fff;
+}
+
+
+/* Media Queries */
+@media(max-width: 787px) {
+	header .logo,
+	header nav,
+	header li,
+	#parent .child,
+	main .main-section,
+	aside .side-section
+	  {
+		float: none;
+		text-align:  center;
+		width: 100%;
+	}
+	header {
+		padding-bottom: 20px;
+	}
+	.newsletter  button[type="submit"] {
+			width: 100%;
+			display: block;
+	}
+	.newsletter  input[type="email"] {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	main .main-section,
+	aside .side-section {
+		margin: 0 auto;
+	}
+	.hero_2 {
+	background-size: cover; 
+	
+}
+
+}
+
+@media(max-width: 589px) {
+	.hero  .dark-bg {
+		color: #efe8ef;
+		font-weight: bold;
+		background-color: rgba(0,0,0,0.7);
+
+
+	}
+}

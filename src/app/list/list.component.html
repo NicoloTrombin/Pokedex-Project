@@ -1,0 +1,68 @@
+<body>
+	<header>	
+		<div class="container">
+			<div class="logo">
+	 			<h1>Pokedex</h1>
+	 		</div>
+
+	 		<nav>
+	 		  <ul>
+                <li><a routerLink="/list">Home</a></li>
+                <li><a routerLink="/add">New</a></li>
+                <li><a (click)="logOut()">Logout</a></li> 
+	 	      </ul>		
+	 		</nav>
+		</div>	
+	</header>
+
+
+	<section class="hero">
+		<div class="container dark-bg">		
+			<h2>Welcome to Pokedex</h2>
+			<p>Here you'll be able to create, remove & edit your dream Pokemon dek in one single click</p>
+		</div>	
+	</section>
+        
+</body>
+
+<div class="general-container">
+    <div class="list-container">
+    <h2 class="pokemons-list">List</h2>
+    <div class="employer-list">
+        <table>
+            <thead>
+                <tr>    
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of pokemons">
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.nome }}</td>
+                    <td>
+                        <a class="edit-button" [routerLink]="['/add', p.id]">Edit</a>
+                        <a class="delete-button" (click)="onClickDelete(p.id)">Delete</a>
+                        <a class="details-button" [routerLink]="['/details', p.id]">Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+
+<footer>
+    <section class="newsletter">
+        <div class="container">
+            <h3>Subscribe to our newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="btn-style">Subscribe</button>
+            </form>	
+        </div>	
+    </section>
+
+    <p> Pokedex, Copyright &copy; 2023</p>
+</footer>

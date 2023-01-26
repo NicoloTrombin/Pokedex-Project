@@ -1,0 +1,139 @@
+<body>
+	<header>	
+		<div class="container">
+			<div class="logo">
+	 			<h1>Pokedex</h1>
+	 		</div>
+
+	 		<nav>
+	 			<ul>
+          <li><a routerLink="/list">Home</a></li>
+          <li><a routerLink="/add">New</a></li>
+          <li><a (click)="logOut()">Logout</a></li>
+	 			</ul>		
+	 		</nav>
+		</div>	
+	</header>
+
+
+	<section class="hero">
+		<div class="container dark-bg">		
+			<h2>Welcome to Pokedex</h2>
+			<p>Here you'll be able to create, remove & edit your dream Pokemon dek in one single click</p>
+		</div>	
+	</section>
+</body>
+
+<!-- POKEMON DETAILS -->
+<div id="pokedex" *ngIf="pokemons">
+    <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"> </div>
+        </div>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+        <div id="picture">
+          <img src="{{ pokemons.urlImage }}" alt="psykokwak" height="170" />
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      <div id="bigbluebutton"></div>
+      <div id="barbutton1"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross">
+          <div id="leftT"></div>
+        </div>
+        <div id="topcross">
+          <div id="upT"></div>
+        </div>
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+        <div id="midcross">
+          <div id="midCircle"></div>
+        </div>
+        <div id="botcross">
+          <div id="downT"></div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="stats" style="height:120px;width:280px;overflow:auto;">
+        <strong>Name:</strong> {{ pokemons.nome }}<br/>
+        <strong>Type:</strong> {{ pokemons.tipi }}<br/>
+        <strong>Height:</strong> {{ pokemons.dati.altezza }}''<br/>
+        <strong>Weight:</strong> {{ pokemons.dati.peso }} lbs.<br/><br/>
+
+        <strong>Stats</strong><br/>
+        <strong>HP:</strong> {{ pokemons.stats.hp }} <br>
+        <strong>Attack:</strong> {{ pokemons.stats.attacco }} <br>
+        <strong>Defense:</strong> {{ pokemons.stats.difesa }} <br>
+        <strong>SP Attack:</strong> {{ pokemons.stats.attaccoSp }} <br>
+        <strong>SP Defense:</strong> {{ pokemons.stats.difesaSp }} <br>
+        <strong>Speed:</strong> {{ pokemons.stats.velocita }} <br><br>
+
+        <strong>Abilities</strong><br>
+        <div *ngFor="let a of pokemons.abilita">
+        <strong>Name:</strong> {{ a.nome }} <br>
+        <strong>Hidden:</strong> {{ a.nascosta? "Yes" : "No" }} <br>
+        </div> <br>
+
+        <strong>Moves</strong><br>
+        <div *ngFor="let m of pokemons.mosse">
+        <strong>Name:</strong> {{ m.nome }} <br>
+        <strong>Type:</strong> {{ m.tipo }} <br>
+        </div>
+
+      </div>
+      <div id="blueButtons1">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="blueButtons2">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="miniButtonGlass4"></div>
+      <div id="miniButtonGlass5"></div>
+      <div id="barbutton3"></div>
+      <div id="barbutton4"></div>
+      <div id="yellowBox1"></div>
+      <div id="yellowBox2"></div>
+      <div id="bg_curve1_right"></div>
+      <div id="bg_curve2_right"></div>
+      <div id="curve1_right"></div>
+      <div id="curve2_right"></div>
+    </div>
+  </div>
+
+  

@@ -1,0 +1,188 @@
+<body>
+	<header>	
+		<div class="container">
+			<div class="logo">
+	 			<h1>Pokedex</h1>
+	 		</div>
+
+	 		<nav>
+	 			<ul>
+          <li><a routerLink="/list">Home</a></li>
+          <li><a routerLink="/add">New</a></li>
+          <li><a (click)="logOut()">Logout</a></li>
+	 			</ul>		
+	 		</nav>
+		</div>	
+	</header>
+
+
+	<section class="hero">
+		<div class="container dark-bg">		
+			<h2>Welcome to Pokedex</h2>
+			<p>Here you'll be able to create, remove & edit your dream Pokemon dek in one single click</p>
+		</div>	
+	</section>
+        
+</body>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="general-container">
+        <div class="container1">
+        <h1 class="form-title">New Pokemon</h1>
+          <div class="main-user-info">
+            <!-- Pokemon Name Input -->
+            <div class="user-input-box">
+              <label for="name"> Name</label>
+              <input type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Enter Name"
+                      formControlName="nome"/>
+            </div>
+
+            <!-- Pokemon Image Input -->
+            <div class="user-input-box">
+                <label for="image">Url Image</label>
+                <input type="url"
+                        id="image"
+                        name="image"
+                        placeholder="Enter URL Image"
+                        formControlName="urlImage"/>
+              </div>
+
+              <!-- Pokemon Dati Input -->
+            <div class="user-input-box" formGroupName="dati">
+                <label for="dati">Information</label>
+              <input type="number"
+                      id="altezza"
+                      name="altezza"
+                      placeholder="Enter Height"
+                      formControlName="altezza"/> 
+              <input type="number"
+                      id="peso"
+                      name="peso"
+                      placeholder="Enter Weight"
+                      formControlName="peso"/>
+            </div>
+
+			<!-- Pokemon Stats Input -->
+			<div class="user-input-box" formGroupName="stats">
+			<label for="stats">Stats</label>
+			<input type="number"
+					id="hp"
+					name="hp"
+					placeholder="Enter HP"
+					formControlName="hp"/> 
+			<input type="number"
+					id="attacco"
+					name="attacco"
+					placeholder="Enter Attack"
+					formControlName="attacco"/>
+			<input type="number"
+					id="difesa"
+					name="difesa"
+					placeholder="Enter Defense"
+					formControlName="difesa"/>
+			<input type="number"
+					id="attaccoSp"
+					name="attaccoSP"
+					placeholder="Enter SP Attack"
+					formControlName="attaccoSp"/>
+			<input type="number"
+					id="difesaSp"
+					name="difesaSp"
+					placeholder="Enter SP Defense"
+					formControlName="difesaSp"/>
+			<input type="number"
+					id="velocita"
+					name="velocita"
+					placeholder="Enter Speed"
+					formControlName="velocita"/>
+			</div>
+			
+
+            <!-- Pokemon Type Input -->
+            <div class="user-input-box" formArrayName="tipi">
+              <label for="marks">Type
+                <button style="margin-left: 1rem;" class="add-button" type="button" (click)="onAddTipi()">Add</button>
+              </label>
+                <div 
+                    *ngFor="let tipi of tipiFormArray.controls; 
+                            let i = index">
+                <input type="text"
+                        id="tipi"
+                        name="tipi"
+                        placeholder="Type nº{{ i + 1 }}"
+                        [formControlName]="i" formControlName="0"/>
+                        <button class="delete-button" type="button" (click)="onDeleteTipi(i)">Remove</button>
+                </div> 
+            </div>
+               
+            <!-- Pokemon Ability Input -->
+            <div class="user-input-box" formArrayName="abilita">
+              <label for="ability">Ability
+                <button style="margin-left: 1rem;" type="button" class="add-button" (click)="onAddAbilita()">Add</button>
+              </label>
+              <div *ngFor="let abilita of abilitaFormArray.controls;
+                           let i = index"
+                           [formGroupName]="i">
+                           <input type="text" 
+                           name="nome"
+                           id="nome"
+                           placeholder="Ability nº{{ i +1 }}"
+                           formControlName="nome">
+			  			   
+						   <input type="checkbox" 
+                           name="nascosta"
+                           id="nascosta"
+                           formControlName="nascosta">
+                           <button class="delete-button" type="button" (click)="onDeleteAbilita(i)">Remove</button>
+              </div>
+            </div>
+
+			<!-- Pokemon Moves Input -->
+			<div class="user-input-box" formArrayName="mosse">
+				<label for="mosse">Moves
+					<button style="margin-left: 1rem;" type="button" class="add-button" (click)="onAddMosse()">Add</button>
+				</label>
+				<div *ngFor="let mosse of mosseFormArray.controls;
+								let i = index"
+								[formGroupName]="i">
+								<input type="text" 
+								name="nome"
+								id="nome"
+								placeholder="Move nº{{ i + 1 }}"
+								formControlName="nome">
+								<input type="text" 
+								name="tipo"
+								id="tipo"
+								placeholder="Type ex(normale, volante, lotta)"
+								formControlName="tipo">
+								<button class="delete-button" type="button" (click)="onDeleteMosse(i)">Remove</button>
+				</div>
+				</div>
+    
+          </div>
+          <!-- Submit Botton -->
+          <div class="form-submit-btn">
+            <input type="submit" value="Add">
+          </div>
+      </div>
+    </div>
+ </form>
+
+ <footer>
+  <section class="newsletter">
+      <div class="container">
+          <h3 style="margin-bottom: 1.3rem;">Subscribe to our newsletter</h3>
+          <form>
+              <input type="email" placeholder="Enter your email">
+              <button type="submit" class="btn-style">Subscribe</button>
+          </form>	
+      </div>	
+  </section>
+
+  <p style="margin-top: 1.3rem; margin-bottom: 1.5rem;"> Pokedex, Copyright &copy; 2023</p>
+</footer>
+
+

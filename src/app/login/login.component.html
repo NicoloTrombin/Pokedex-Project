@@ -1,0 +1,26 @@
+<body>
+    <div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="user-box">
+        <input formControlName="email" type="email" name="" required="">
+        <label>Enter email</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="password" type="password" name="" required="">
+        <label>Enter password</label>
+      </div>
+      <button type="submit">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+    </form>
+    <br>
+    <br>
+    <a style="color: lightblue;" routerLink="/signup">You do not have an account? Sign up</a>
+  </div>
+</body>
+

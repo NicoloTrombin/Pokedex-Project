@@ -1,0 +1,11 @@
+{
+  "singupUsers": [
+    {
+      "fullname": "Nicolo Trombin",
+      "email": "nikitrombin74@gmail.com",
+      "country": "Spain",
+      "password": "123456",
+      "id": 1
+    }
+  ]
+}

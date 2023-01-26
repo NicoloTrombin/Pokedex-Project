@@ -1,0 +1,32 @@
+<body>
+    <div class="login-box">
+    <h2>Sign Up</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+      <div class="user-box">
+        <input formControlName="fullname" type="text" name="" required="">
+        <label>Full Name</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="email" type="email" name="" required="">
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="country" type="text" name="" required="">
+        <label>Coutry</label>
+      </div>
+      <div class="user-box">
+        <input formControlName="password" type="password" name="" required="">
+        <label>Password</label>
+      </div>
+      <button type="submit">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+    </form>
+    <br>
+    <a style="color: lightblue;" routerLink="/login">You have an account? Get in</a>
+  </div>
+</body>
